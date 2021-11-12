@@ -5,6 +5,7 @@ using UnityEngine;
 public class SceneController : MonoBehaviour {
   public delegate void OnClickDelegate();
   public static event OnClickDelegate OnClickStartMicEvent, OnClickEndMicEvent;
+  public static event OnClickDelegate OnClickReproduceMicEvent;
   public static event OnClickDelegate OnClickPlayCamEvent, OnClickPauseCamEvent;
   public static event OnClickDelegate OnClickStopCamEvent;
 
@@ -18,6 +19,9 @@ public class SceneController : MonoBehaviour {
     }
     if (GUILayout.Button("End Microphone")) {
       OnClickEndMicEvent();
+    }
+    if (GUILayout.Button("Reproduce Microphone")) {
+      OnClickReproduceMicEvent();
     }
     if (GUILayout.Button("Play Camera")) {
       OnClickPlayCamEvent();
